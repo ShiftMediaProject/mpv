@@ -190,6 +190,27 @@ static bool check_stream_network(int fd)
 
 }
 #elif defined(_WIN32)
+#ifdef _MSC_VER
+typedef enum
+{
+    FileFsVolumeInformation = 1,
+    FileFsLabelInformation = 2,
+    FileFsSizeInformation = 3,
+    FileFsDeviceInformation = 4,
+    FileFsAttributeInformation = 5,
+    FileFsControlInformation = 6,
+    FileFsFullSizeInformation = 7,
+    FileFsObjectIdInformation = 8,
+    FileFsDriverPathInformation = 9,
+    FileFsVolumeFlagsInformation = 10,
+    FileFsSectorSizeInformation = 11
+} FS_INFORMATION_CLASS;
+typedef struct _FILE_FS_DEVICE_INFORMATION
+{
+    DEVICE_TYPE DeviceType;
+    ULONG       Characteristics;
+} FILE_FS_DEVICE_INFORMATION, *PFILE_FS_DEVICE_INFORMATION;
+#endif
 static bool check_stream_network(int fd)
 {
     NTSTATUS (NTAPI *pNtQueryVolumeInformationFile)(HANDLE,
