@@ -502,7 +502,7 @@ int ao_play_silence(struct ao *ao, int samples)
     return ao->driver->play(ao, (void **)p->silence, samples, 0);
 }
 
-#ifndef __MINGW32__
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
 
 #include <poll.h>
 

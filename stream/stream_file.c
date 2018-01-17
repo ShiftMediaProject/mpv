@@ -26,7 +26,7 @@
 #include <unistd.h>
 #include <errno.h>
 
-#ifndef __MINGW32__
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
 #include <poll.h>
 #endif
 
@@ -66,7 +66,7 @@ struct priv {
 static int fill_buffer(stream_t *s, char *buffer, int max_len)
 {
     struct priv *p = s->priv;
-#ifndef __MINGW32__
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
     if (p->use_poll) {
         int c = s->cancel ? mp_cancel_get_fd(s->cancel) : -1;
         struct pollfd fds[2] = {
@@ -266,7 +266,7 @@ static int open_f(stream_t *stream)
         }
     } else {
         mode_t openmode = S_IRUSR | S_IWUSR;
-#ifndef __MINGW32__
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
         openmode |= S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH;
         if (!write)
             m |= O_NONBLOCK;
@@ -286,7 +286,7 @@ static int open_f(stream_t *stream)
                 stream->allow_caching = false;
                 MP_INFO(stream, "This is a directory - adding to playlist.\n");
             }
-#ifndef __MINGW32__
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
             if (S_ISREG(st.st_mode)) {
                 p->use_poll = false;
                 // O_NONBLOCK has weird semantics on file locks; remove it.
@@ -298,7 +298,7 @@ static int open_f(stream_t *stream)
         p->close = true;
     }
 
-#ifdef __MINGW32__
+#if !defined(__MINGW32__) && !defined(_MSC_VER)
     setmode(p->fd, O_BINARY);
 #endif
 
