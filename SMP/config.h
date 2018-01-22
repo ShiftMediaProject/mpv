@@ -83,7 +83,7 @@
 #define HAVE_VAPOURSYNTH 0
 #define HAVE_VAPOURSYNTH_LAZY 0
 #define HAVE_VAPOURSYNTH_CORE 0
-#define HAVE_LIBARCHIVE 0
+#define HAVE_LIBARCHIVE 1
 #define HAVE_SDL2 0
 #define HAVE_SDL1 0
 #define HAVE_OSS_AUDIO 0
@@ -160,8 +160,7 @@
 #define HAVE_WIN32_EXECUTABLE 1
 #define HAVE_APPLE_REMOTE 0
 #define HAVE_MACOS_TOUCHBAR 0
-#define CONFIGURATION "./waf configure --disable-cplayer --enable-libmpv-static --disable-debug-build --disable-manpage-build --disable-lcms2 --disable-vapoursynth --disable-vapoursynth-lazy --disable-tv-v4l2 --disable-libv4l2 --disable-apple-remote --disable-macos-touchbar"
-#define MPV_CONFDIR "/usr/local/etc/mpv"
-#define FULLCONFIG "alsa asm atomics build-date cplugins cuda-hwaccel drm drmprime egl-helpers egl-x11 encoding fchmod ffmpeg gl gl-x11 glibc-thread-name glob glob-posix gnuc gpl iconv libaf libass libass-osd libav-any libavcodec libavdevice libdl libm libmpv-static librt linux-fstatfs optimize oss-audio plain-gl posix posix-or-mingw posix-spawn posix-spawn-native pthreads pulse stdatomic vaapi vaapi-egl vaapi-glx vaapi-x-egl vaapi-x11 vdpau vdpau-gl-x11 vt.h x11 xv zlib"
+#define CONFIGURATION "configure"
+#define FULLCONFIG "alsa asm atomics build-date cplugins cuda-hwaccel drm drmprime egl-helpers egl-x11 encoding fchmod ffmpeg gl gl-x11 glibc-thread-name glob glob-posix gnuc gpl iconv libaf libarchive libass libass-osd libav-any libavcodec libavdevice libdl libm libmpv-static librt linux-fstatfs optimize oss-audio plain-gl posix posix-or-mingw posix-spawn posix-spawn-native pthreads pulse stdatomic vaapi vaapi-egl vaapi-glx vaapi-x-egl vaapi-x11 vdpau vdpau-gl-x11 vt.h x11 xv zlib"
 
 #endif /* W_CONFIG_H_WAF */

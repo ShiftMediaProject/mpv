@@ -132,6 +132,7 @@
     <ClInclude Include="..\stream\rar.h" />
     <ClInclude Include="..\stream\stream.h" />
     <ClInclude Include="..\stream\stream_dvd_common.h" />
+    <ClInclude Include="..\stream\stream_libarchive.h" />
     <ClInclude Include="..\sub\ass_mp.h" />
     <ClInclude Include="..\sub\dec_sub.h" />
     <ClInclude Include="..\sub\draw_bmp.h" />
@@ -231,6 +232,7 @@
     <ClCompile Include="..\demux\demux_disc.c" />
     <ClCompile Include="..\demux\demux_edl.c" />
     <ClCompile Include="..\demux\demux_lavf.c" />
+    <ClCompile Include="..\demux\demux_libarchive.c" />
     <ClCompile Include="..\demux\demux_mf.c" />
     <ClCompile Include="..\demux\demux_mkv.c" />
     <ClCompile Include="..\demux\demux_mkv_timeline.c" />
@@ -314,6 +316,7 @@
     <ClCompile Include="..\stream\stream_edl.c" />
     <ClCompile Include="..\stream\stream_file.c" />
     <ClCompile Include="..\stream\stream_lavf.c" />
+    <ClCompile Include="..\stream\stream_libarchive.c" />
     <ClCompile Include="..\stream\stream_memory.c" />
     <ClCompile Include="..\stream\stream_mf.c" />
     <ClCompile Include="..\stream\stream_null.c" />
@@ -633,7 +636,7 @@
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -684,7 +687,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
-      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
     <PostBuildEvent>
       <Command>mkdir "$(OutDir)"\include
@@ -739,7 +742,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
-      <AdditionalDependencies>avutild.lib;avcodecd.lib;avformatd.lib;avfilterd.lib;avdeviced.lib;swscaled.lib;postprocd.lib;swresampled.lib;blurayd.lib;dvdnavd.lib;dvdreadd.lib;cdiod.lib;cdio_paranoiad.lib;assd.lib;iconvd.lib;zlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>avutild.lib;avcodecd.lib;avformatd.lib;avfilterd.lib;avdeviced.lib;swscaled.lib;postprocd.lib;swresampled.lib;archived.lib;blurayd.lib;dvdnavd.lib;dvdreadd.lib;cdiod.lib;cdio_paranoiad.lib;assd.lib;iconvd.lib;zlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -795,7 +798,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
-      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -850,7 +853,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
-      <AdditionalDependencies>avutild.lib;avcodecd.lib;avformatd.lib;avfilterd.lib;avdeviced.lib;swscaled.lib;postprocd.lib;swresampled.lib;blurayd.lib;dvdnavd.lib;dvdreadd.lib;cdiod.lib;cdio_paranoiad.lib;assd.lib;iconvd.lib;zlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>avutild.lib;avcodecd.lib;avformatd.lib;avfilterd.lib;avdeviced.lib;swscaled.lib;postprocd.lib;swresampled.lib;archived.lib;blurayd.lib;dvdnavd.lib;dvdreadd.lib;cdiod.lib;cdio_paranoiad.lib;assd.lib;iconvd.lib;zlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -905,7 +908,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
-      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutild.lib;libavcodecd.lib;libavformatd.lib;libavfilterd.lib;libavdeviced.lib;libswscaled.lib;libpostprocd.lib;libswresampled.lib;libarchived.lib;libblurayd.lib;libdvdnavd.lib;libdvdreadd.lib;libcdiod.lib;libcdio_paranoiad.lib;libassd.lib;libiconvd.lib;libzlibd.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -963,7 +966,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x86\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
@@ -1021,7 +1024,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <SubSystem>Windows</SubSystem>
       <OutputFile>$(OutDir)\lib\x64\$(TargetName)$(TargetExt)</OutputFile>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalOptions>/IGNORE:4006,4221,4049,4217,4197,4099 %(AdditionalOptions)</AdditionalOptions>
     </Lib>
     <PostBuildEvent>
@@ -1085,7 +1088,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
-      <AdditionalDependencies>avutil.lib;avcodec.lib;avformat.lib;avfilter.lib;avdevice.lib;swscale.lib;postproc.lib;swresample.lib;bluray.lib;dvdnav.lib;dvdread.lib;cdio.lib;cdio_paranoia.lib;ass.lib;iconv.lib;zlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>avutil.lib;avcodec.lib;avformat.lib;avfilter.lib;avdevice.lib;swscale.lib;postproc.lib;swresample.lib;archive.lib;bluray.lib;dvdnav.lib;dvdread.lib;cdio.lib;cdio_paranoia.lib;ass.lib;iconv.lib;zlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -1149,7 +1152,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <LargeAddressAware>true</LargeAddressAware>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>5.1</MinimumRequiredVersion>
-      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x86\;$(ProjectDir)\..\..\prebuilt\lib\x86\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -1212,7 +1215,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
-      <AdditionalDependencies>avutil.lib;avcodec.lib;avformat.lib;avfilter.lib;avdevice.lib;swscale.lib;postproc.lib;swresample.lib;bluray.lib;dvdnav.lib;dvdread.lib;cdio.lib;cdio_paranoia.lib;ass.lib;iconv.lib;zlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>avutil.lib;avcodec.lib;avformat.lib;avfilter.lib;avdevice.lib;swscale.lib;postproc.lib;swresample.lib;archive.lib;bluray.lib;dvdnav.lib;dvdread.lib;cdio.lib;cdio_paranoia.lib;ass.lib;iconv.lib;zlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
@@ -1275,7 +1278,7 @@ del /f /q $(OutDir)\licenses\mpv.txt
       <ProfileGuidedDatabase>$(IntDir)\$(TargetName).pgd</ProfileGuidedDatabase>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <MinimumRequiredVersion>6.0</MinimumRequiredVersion>
-      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>libavutil.lib;libavcodec.lib;libavformat.lib;libavfilter.lib;libavdevice.lib;libswscale.lib;libpostproc.lib;libswresample.lib;libarchive.lib;libbluray.lib;libdvdnav.lib;libdvdread.lib;libcdio.lib;libcdio_paranoia.lib;libass.lib;libiconv.lib;libzlib.lib;OpenGL32.lib;winmm.lib;ole32.lib;uuid.lib;oleaut32.lib;ksuser.lib;avrt.lib;version.lib;dwmapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>$(OutDir)\lib\x64\;$(ProjectDir)\..\..\prebuilt\lib\x64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>

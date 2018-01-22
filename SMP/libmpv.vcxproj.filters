@@ -543,6 +543,9 @@
     <ClInclude Include="..\options\path.h">
       <Filter>Header Files\options</Filter>
     </ClInclude>
+    <ClInclude Include="..\stream\stream_libarchive.h">
+      <Filter>Header Files\stream</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\audio\aconverter.c">
@@ -1126,6 +1129,12 @@
     </ClCompile>
     <ClCompile Include="..\video\out\gpu\spirv.c">
       <Filter>Source Files\video\out\gpu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\demux\demux_libarchive.c">
+      <Filter>Source Files\demux</Filter>
+    </ClCompile>
+    <ClCompile Include="..\stream\stream_libarchive.c">
+      <Filter>Source Files\stream</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
